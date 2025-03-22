@@ -1,10 +1,13 @@
 ####
 apt update -y
-apt install -y libx11-dev libxft-dev  libxinerama-dev zip git gcc make  sed 
-git clone --depth=1 https://github.com/kzwkt/instantWM
-cd instantWM
+apt install -y  gcc make  sed 
+
+ver=2.22
+wget https://github.com/illiliti/eiwd/releases/download/$ver-1/iwd-$ver.tar.xz
+tar xf iwd-$ver.tar.xz
+cd iwd-$ver.tar.xz
+
+cd iwd-$ver
+./configure --disable-dbus --disable-client --disable-monitor
 make
-mkdir -p ./dwmpkg/usr/bin
-mkdir -p ./dwmpkg/usr/share/man/man1/
-make PREFIX=/usr DESTDIR="./dwmpkg" install
-zip -r dwmpkg.zip dwmpkg
+strip src/iwd
