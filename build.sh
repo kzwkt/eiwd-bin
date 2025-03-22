@@ -9,6 +9,6 @@ tar xf iwd-$ver.tar.xz
 cd iwd-$ver.tar.xz
 
 cd iwd-$ver
-./configure --disable-dbus --disable-client --disable-monitor
+./configure --disable-dbus --disable-client --disable-monitor  --disable-systemd-service 
 make
 strip src/iwd
