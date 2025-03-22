@@ -1,0 +1,39 @@
+name: Build st in Debian Stable Container
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*'               # Include all files
+      - '!README.md'          # Exclude README.md
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # This is to run the GitHub Actions 
+    container:
+      image: debian:stable  
+   
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+
+    - name:  install dependecies
+      run: |
+       bash build.sh
+       upload=$(realpath instantWM/dwmpkg.zip)
+       echo "FILE1=${upload}" >> $GITHUB_ENV 
+
+    - name: Create GitHub Release and Upload ZIP
+      uses: softprops/action-gh-release@v2
+      with:
+          tag_name: 1.0.0
+          files: |
+              ${{ env.FILE1 }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
+       
+       
+      
