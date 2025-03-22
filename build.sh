@@ -1,6 +1,6 @@
 ####
 apt update -y
-apt install -y  gcc make  sed  binutils --no-install-recommendsd
+apt install -y  gcc make  sed  binutils --no-install-recommends
 
 ver=2.22
 echo $ver > ver
