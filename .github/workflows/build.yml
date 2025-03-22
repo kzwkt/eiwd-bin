@@ -23,9 +23,10 @@ jobs:
     - name:  install dependecies
       run: |
        bash build.sh
+       ver=$(cat ver)
        upload=$(realpath iwd-$ver/src/iwd)
        echo "FILE1=${upload}" >> $GITHUB_ENV 
-       echo "ver=$(cat ver)" >> $GITHUB_ENV 
+       echo "ver=$ver" >> $GITHUB_ENV 
 
     - name: Create GitHub Release and Upload ZIP
       uses: softprops/action-gh-release@v2
