@@ -1,6 +1,6 @@
 ####
 apt update -y
-apt install -y  gcc make  sed  binutils  wget ca-certificates --no-install-recommends
+apt install -y  gcc make  sed  binutils  wget ca-certificates  xz-utils --no-install-recommends
 
 ver=2.22
 echo $ver > ver
