@@ -1,4 +1,3 @@
-####
 apt update -y
 apt install -y  gcc g++ make  sed  binutils  wget ca-certificates  xz-utils --no-install-recommends
 
