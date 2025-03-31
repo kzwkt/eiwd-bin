@@ -1,6 +1,6 @@
 eiwd binary build
 
-
+```
 ./configure --help
 `configure' configures iwd 2.22 to adapt to many kinds of systems.
 
@@ -103,3 +103,5 @@ Optional Features:
   --enable-external-ell   enable external Embedded Linux library
   --enable-libedit        enable Editline library instead of Readline
   --enable-wired          enable Ethernet authentication support
+
+```
