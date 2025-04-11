@@ -1,5 +1,7 @@
 eiwd binary build
 
+https://github.com/illiliti/eiwd/releases
+
 ```
 ./configure --help
 `configure' configures iwd 2.22 to adapt to many kinds of systems.
